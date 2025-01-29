@@ -1,4 +1,4 @@
-# billie_eilish_store
+# billie_eilish_merch_app
 
 A new Flutter project.
 
