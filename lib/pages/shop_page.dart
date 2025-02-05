@@ -75,58 +75,85 @@ class _ShopPageState extends State<ShopPage> {
           SizedBox(height: 25,),
           Center(
             child: Text(
-              'Merch from the greatest singer',
+              'Merch from Billie Eilish',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.inversePrimary
               ),
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 5.0),
-            // margin: EdgeInsets.symmetric(vertical: 5.0),
-            child: Text(
-              'HIT ME HARD AND SOFT',
-              style:TextStyle(
-                color: Theme.of(context).colorScheme.primary,
-                fontWeight: FontWeight.bold
-              ),
-            ),
-          ),
+          SizedBox(height: 25,),
           SizedBox(
             height: 550,
-            child: ListView.builder(
-              itemCount: hmhasProduct.length,
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.all(15),
-              itemBuilder: (context, index) {
-                final product = hmhasProduct[index];
-            
-                return MyProductTile(
-                  product: product,
-                  updateCartQuantity: (int quantity) {
-                    onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
-                  },
-                );
-              }
-            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Text(
+                    'From HIT ME HARD AND SOFT Album',
+                    style:TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                      
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: hmhasProduct.length,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 15),
+                    itemBuilder: (context, index) {
+                      final product = hmhasProduct[index];
+                  
+                      return MyProductTile(
+                        product: product,
+                        updateCartQuantity: (int quantity) {
+                          onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
+                        },
+                      );
+                    }
+                  ),
+                ),
+              ],
+            )
           ),
+          SizedBox(height: 25,),
           SizedBox(
             height: 550,
-            child: ListView.builder(
-              itemCount: newProduct.length,
-              scrollDirection: Axis.horizontal,
-              padding: EdgeInsets.all(15),
-              itemBuilder: (context, index) {
-                final product = newProduct[index];
-            
-                return MyProductTile(
-                  product: product,
-                  updateCartQuantity: (int quantity) {
-                    onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
-                  },
-                );
-              }
-            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Text(
+                    'New Arrivals',
+                    style:TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                      
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: newProduct.length,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 15),
+                    itemBuilder: (context, index) {
+                      final product = newProduct[index];
+                  
+                      return MyProductTile(
+                        product: product,
+                        updateCartQuantity: (int quantity) {
+                          onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
+                        },
+                      );
+                    }
+                  ),
+                ),
+              ],
+            )
           ),
         ],
       ),
