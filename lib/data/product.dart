@@ -5,6 +5,7 @@ class Product {
   final double price;
   final String description;
   final String imagePath;
+  final String type;
   int quantity;
   
   Product({
@@ -12,7 +13,8 @@ class Product {
     required this.price,
     required this.description,
     required this.imagePath,
-    required this.quantity
+    required this.quantity,
+    required this.type
   });
 
   // Copy constructor
@@ -21,7 +23,8 @@ class Product {
     price = product.price,
     description = product.description,
     imagePath = product.imagePath,
-    quantity = product.quantity;
+    quantity = product.quantity,
+    type = product.type;
 }
 
 final List<Product> products = [
@@ -30,28 +33,40 @@ final List<Product> products = [
     price: 29.99 * 16000,
     description: 'Made of 100% recycled black vinyl',
     imagePath: 'assets/images/hmhas_vinyl.png',
-    quantity: 0
+    quantity: 0,
+    type: 'hmhas'
   ),
   Product(
     name: 'Blue & Red Zip Hoodie',
     price: 99.00 * 16000,
     description: 'Produced using 100% organic cotton',
     imagePath: 'assets/images/hmhas_hoodie.png',
-    quantity: 0
+    quantity: 0,
+    type: 'hmhas'
   ),
   Product(
     name: 'HIT ME HARD AND SOFT Standard CD',
     price: 12.99 * 16000,
     description: 'Made of 100% recycled black CD',
     imagePath: 'assets/images/hmhas_cd.png',
-    quantity: 0
+    quantity: 0,
+    type: 'hmhas'
   ),
   Product(
     name: 'Hit Me Hard And Soft Blue Blohsh Necklace',
     price: 60.00 * 16000,
     description: 'Sterling Silver Rhinestone Blohsh pendant. 16” Chain with 3” extender',
     imagePath: 'assets/images/hmhas_necklace.png',
-    quantity: 0
+    quantity: 0,
+    type: 'hmhas'
+  ),
+  Product(
+    name: 'HAPPIER THAN EVER',
+    price: 60.00 * 16000,
+    description: 'Sterling Silver Rhinestone Blohsh pendant. 16” Chain with 3” extender',
+    imagePath: 'assets/images/hmhas_necklace.png',
+    quantity: 0,
+    type: 'newCollection'
   ),
 ];
 
