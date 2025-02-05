@@ -193,45 +193,52 @@ class OrderPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 25,),
+              SizedBox(height: 10,),
               Expanded(
-                child: ListView.builder(
-                  itemCount: order.length,
-                  itemBuilder: (context, index) {
-                    final item = order[index];
-                  
-                    return Container(
-                      margin: EdgeInsets.all(5),
-                      child: ListTile(
-                        leading: Image.asset(
-                          item.imagePath,
-                          width: 75,
-                        ),
-                        title: Text(
-                          item.name,
-                          style: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
-                            fontWeight: FontWeight.bold,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Theme.of(context).colorScheme.secondary),
+                    borderRadius: BorderRadius.circular(12)
+                  ),
+                  child: ListView.builder(
+                    itemCount: order.length,
+                    itemBuilder: (context, index) {
+                      final item = order[index];
+                    
+                      return Container(
+                        margin: EdgeInsets.all(5),
+                        child: ListTile(
+                          leading: Image.asset(
+                            item.imagePath,
+                            width: 75,
                           ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        subtitle: Expanded(
-                          child: Row(
-                            children: [
-                              Text(
-                                '${item.quantity} x ${formatToRupiah(item.price)}',
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary,
+                          title: Text(
+                            item.name,
+                            style: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          subtitle: Expanded(
+                            child: Row(
+                              children: [
+                                Text(
+                                  '${item.quantity} x ${formatToRupiah(item.price)}',
+                                  style: TextStyle(
+                                    color: Theme.of(context).colorScheme.primary,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    );
-                  },
-                ),
+                      );
+                    },
+                  ),
+                )
               ),
+              SizedBox(height: 10,),
               Text(
                 'Total: ${totalOrder()}',
                 style: TextStyle(
