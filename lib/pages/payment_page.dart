@@ -105,17 +105,22 @@ class _PaymentPageState extends State<PaymentPage> {
                       ),
                     ),
                     SizedBox(height: 3,),
-                    DropdownButton(
+                    DropdownButtonFormField<String>(
                       value: paymentValue,
-                      focusColor: Colors.white,
-                      borderRadius: BorderRadius.circular(5),
-                      autofocus: true,
-                      dropdownColor: Theme.of(context).colorScheme.primary,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                      // focusColor: Colors.white,
+                      // borderRadius: BorderRadius.circular(5),
+                      // autofocus: true,
+                      dropdownColor: Colors.white,
                       items: paymentMethod.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                            padding: const EdgeInsets.symmetric(horizontal: 5.0),
                             child: Text(value),
                           ),
                         );
