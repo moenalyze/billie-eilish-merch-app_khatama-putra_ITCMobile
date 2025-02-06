@@ -63,7 +63,7 @@ class OrderPage extends StatelessWidget {
         
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [ 
+            children: [
               Table(
                 columnWidths: {
                   0 : IntrinsicColumnWidth(),
@@ -229,13 +229,14 @@ class OrderPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10,),
-              Expanded(
+              Flexible(
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Theme.of(context).colorScheme.secondary),
                     borderRadius: BorderRadius.circular(12)
                   ),
                   child: ListView.builder(
+                    shrinkWrap: true,
                     itemCount: order.length,
                     itemBuilder: (context, index) {
                       final item = order[index];
@@ -255,17 +256,15 @@ class OrderPage extends StatelessWidget {
                             ),
                             overflow: TextOverflow.ellipsis,
                           ),
-                          subtitle: Expanded(
-                            child: Row(
-                              children: [
-                                Text(
-                                  '${item.quantity} x ${formatToRupiah(item.price)}',
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.primary,
-                                  ),
+                          subtitle: Row(
+                            children: [
+                              Text(
+                                '${item.quantity} x ${formatToRupiah(item.price)}',
+                                style: TextStyle(
+                                  color: Theme.of(context).colorScheme.primary,
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       );
