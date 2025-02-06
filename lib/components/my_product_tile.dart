@@ -88,6 +88,8 @@ class _MyProductTileState extends State<MyProductTile> {
                   color: Theme.of(context).colorScheme.primary,
                   fontSize: 20
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis
               ),
               SizedBox(height: 10,),
               Text(
@@ -95,6 +97,8 @@ class _MyProductTileState extends State<MyProductTile> {
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.inversePrimary
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis
               ),
             ],
           ),

@@ -28,6 +28,7 @@ class Product {
 }
 
 final List<Product> products = [
+  // hmhas
   Product(
     name: 'HIT ME HARD AND SOFT Excl. Vinyl',
     price: 37.99 * 16000,
@@ -60,6 +61,7 @@ final List<Product> products = [
     quantity: 0,
     type: 'hmhas'
   ),
+  // new collection
   Product(
     name: 'Blohsh Polo Long Sleeve',
     price: 106.00 * 16000,
@@ -92,15 +94,82 @@ final List<Product> products = [
     quantity: 0,
     type: 'newCollection'
   ),
+  // hte
+  Product(
+    name: 'Happier Than Ever: Excl. Recycled Vinyl 2LP',
+    price: 45.99 * 16000,
+    description: 'This waste free swirl variant is made from recycled vinyl scraps from all the colors of the first pressing of the record',
+    imagePath: 'assets/images/hte_vinyl-2lp.png',
+    quantity: 0,
+    type: 'hte'
+  ),
+  Product(
+    name: 'Happier Than Ever: CD',
+    price: 12.99 * 16000,
+    description: 'This waste free swirl variant is made from recycled vinyl scraps from all the colors of the first pressing of the record',
+    imagePath: 'assets/images/hte_cd.png',
+    quantity: 0,
+    type: 'hte'
+  ),
+  Product(
+    name: 'Happier Than Ever: Vinyl LP',
+    price: 43.99 * 16000,
+    description: 'This waste free swirl variant is made from recycled vinyl scraps from all the colors of the first pressing of the record',
+    imagePath: 'assets/images/hte_vinyl-lp.png',
+    quantity: 0,
+    type: 'hte'
+  ),
+  // wwafawdwg
+  Product(
+    name: 'WWAFAWDWG Anniversary Layered Ls Tee In Black',
+    price: 72.00 * 16000,
+    description: 'Black 2-fer Longsleeve T-Shirt featuring art from When WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?',
+    imagePath: 'assets/images/ww_ls-tee.png',
+    quantity: 0,
+    type: 'ww'
+  ),
+  Product(
+    name: 'WWAFAWDWG Anniversary T-Shirt Dress In White',
+    price: 65.00 * 16000,
+    description: 'White t-shirt dress featuring illustration screenprinted on front.',
+    imagePath: 'assets/images/ww_t-shirt.png',
+    quantity: 0,
+    type: 'ww'
+  ),
+  Product(
+    name: 'WWAFAWDWG Anniversary Tank In Black',
+    price: 46.00 * 16000,
+    description: 'Cropped ribbed tank featuring art from WHEN WE ALL FALL ASLEEP, WHERE DO WE GO',
+    imagePath: 'assets/images/ww_tank.png',
+    quantity: 0,
+    type: 'ww'
+  ),
+  Product(
+    name: 'WWAFAWDWG Anniversary Tee In Black',
+    price: 46.00 * 16000,
+    description: 'Black t-shirt featuring art from WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?',
+    imagePath: 'assets/images/ww_tee.png',
+    quantity: 0,
+    type: 'ww'
+  ),
+
 ];
 
 final List<Product> cart = [];
 final List<Product> order = [];
+
+final List<String> paymentMethod = [
+  'GoPay',
+  'BCA Virtual Account',
+  'OVO',
+  'BRI Virtual Account',
+];
+
 String formatToRupiah(double amount) {
-    final NumberFormat currencyFormatter = NumberFormat.currency(
-      locale: 'id_ID', // Menggunakan locale Indonesia
-      symbol: 'Rp', // Simbol mata uang
-      decimalDigits: 2, // Jumlah digit desimal
-    );
-    return currencyFormatter.format(amount);
-  }
+  final NumberFormat currencyFormatter = NumberFormat.currency(
+    locale: 'id_ID', // Menggunakan locale Indonesia
+    symbol: 'Rp', // Simbol mata uang
+    decimalDigits: 2, // Jumlah digit desimal
+  );
+  return currencyFormatter.format(amount);
+}

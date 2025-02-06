@@ -7,6 +7,8 @@ import 'package:billie_eilish_merch_app/pages/shop_page.dart';
 import 'package:billie_eilish_merch_app/theme/hmhas_mode.dart';
 import 'package:flutter/material.dart';
 
+String paymentValue = paymentMethod.first;
+
 void main() {
   runApp(MyApp());
 }
@@ -63,7 +65,7 @@ class _MyAppState extends State<MyApp> {
           clearCart: clearCart,
         ),
         '/payment_page': (context) => PaymentPage(clearCart: clearCart),
-        '/order_page': (context) => OrderPage(),
+        '/order_page': (context) => OrderPage(paymentValue: paymentValue,),
       },
     );
   }

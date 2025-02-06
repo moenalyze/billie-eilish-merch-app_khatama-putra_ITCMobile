@@ -1,5 +1,7 @@
 import 'package:billie_eilish_merch_app/components/my_text_form_field.dart';
 import 'package:billie_eilish_merch_app/data/customer.dart';
+import 'package:billie_eilish_merch_app/data/product.dart';
+import 'package:billie_eilish_merch_app/main.dart';
 import 'package:flutter/material.dart';
 
 class PaymentPage extends StatefulWidget {
@@ -94,6 +96,38 @@ class _PaymentPageState extends State<PaymentPage> {
                       onSaved: (value) {
                         customer.phone = value!;
                       },
+                    ),
+                    SizedBox(height: 12,),
+                    Text(
+                      'Payment Method',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.primary
+                      ),
+                    ),
+                    SizedBox(height: 3,),
+                    DropdownButton(
+                      value: paymentValue,
+                      focusColor: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      autofocus: true,
+                      dropdownColor: Theme.of(context).colorScheme.primary,
+                      items: paymentMethod.map<DropdownMenuItem<String>>((String value) {
+                        return DropdownMenuItem<String>(
+                          value: value,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(value),
+                          ),
+                        );
+                      }).toList(),
+                      onChanged: (value) {
+                        setState(() {
+                          paymentValue = value!;
+                        });
+                      },
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
                     SizedBox(height: 12,),
                     Container(

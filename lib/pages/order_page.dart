@@ -4,7 +4,11 @@ import 'package:billie_eilish_merch_app/data/product.dart';
 import 'package:flutter/material.dart';
 
 class OrderPage extends StatelessWidget {
-  const OrderPage({super.key,});
+  final String paymentValue;
+  const OrderPage({
+    super.key,
+    required this.paymentValue
+  });
 
   String totalOrder() {
     double total = 0;
@@ -184,6 +188,37 @@ class OrderPage extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           customer.address,
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary
+                          )
+                        ),
+                      ),
+                    ],
+                  ),
+                  TableRow(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Payment Method',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary
+                          )
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          ' : ',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary
+                          )
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          paymentValue,
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.primary
                           )

@@ -25,9 +25,10 @@ class _ShopPageState extends State<ShopPage> {
 
   @override
   Widget build(BuildContext context) {
-    final hmhasProduct = products.where((product) => product.type == 'hmhas').toList();
-
     final newProduct = products.where((product) => product.type == 'newCollection').toList();
+    final hmhasProduct = products.where((product) => product.type == 'hmhas').toList();
+    final hteProduct = products.where((product) => product.type == 'hte').toList();
+    final wwProduct = products.where((product) => product.type == 'ww').toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -90,6 +91,43 @@ class _ShopPageState extends State<ShopPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
                   child: Text(
+                    'New Arrivals',
+                    style:TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                      
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: newProduct.length,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 15),
+                    itemBuilder: (context, index) {
+                      final product = newProduct[index];
+                  
+                      return MyProductTile(
+                        product: product,
+                        updateCartQuantity: (int quantity) {
+                          onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
+                        },
+                      );
+                    }
+                  ),
+                ),
+              ],
+            )
+          ),
+          SizedBox(height: 25,),
+          SizedBox(
+            height: 550,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Text(
                     'From HIT ME HARD AND SOFT Album',
                     style:TextStyle(
                       color: Theme.of(context).colorScheme.primary,
@@ -127,7 +165,7 @@ class _ShopPageState extends State<ShopPage> {
                 Padding(
                   padding: const EdgeInsets.only(left: 25),
                   child: Text(
-                    'New Arrivals',
+                    'From Happier Than Ever Album',
                     style:TextStyle(
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
@@ -137,11 +175,48 @@ class _ShopPageState extends State<ShopPage> {
                 ),
                 Expanded(
                   child: ListView.builder(
-                    itemCount: newProduct.length,
+                    itemCount: hteProduct.length,
                     scrollDirection: Axis.horizontal,
                     padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 15),
                     itemBuilder: (context, index) {
-                      final product = newProduct[index];
+                      final product = hteProduct[index];
+                  
+                      return MyProductTile(
+                        product: product,
+                        updateCartQuantity: (int quantity) {
+                          onQuantityChanged(quantity); // Update cart quantity setiap kali ada perubahan
+                        },
+                      );
+                    }
+                  ),
+                ),
+              ],
+            )
+          ),
+          SizedBox(height: 25,),
+          SizedBox(
+            height: 550,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
+                  child: Text(
+                    'From WWAFAWDWG Album',
+                    style:TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
+                      fontWeight: FontWeight.bold,
+                      
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: wwProduct.length,
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 15),
+                    itemBuilder: (context, index) {
+                      final product = wwProduct[index];
                   
                       return MyProductTile(
                         product: product,
