@@ -72,6 +72,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       onSaved: (value) {
                         customer.fullName = value!;
                       },
+                      keyboardType: TextInputType.name,
                     ),
                     SizedBox(height: 12,),
                     MyTextFormField(
@@ -80,6 +81,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       onSaved: (value) {
                         customer.email = value!;
                       },
+                      keyboardType: TextInputType.emailAddress
                     ),
                     SizedBox(height: 12,),
                     MyTextFormField(
@@ -88,6 +90,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       onSaved: (value) {
                         customer.address = value!;
                       },
+                      keyboardType: TextInputType.streetAddress
                     ),
                     SizedBox(height: 12,),
                     MyTextFormField(
@@ -96,6 +99,7 @@ class _PaymentPageState extends State<PaymentPage> {
                       onSaved: (value) {
                         customer.phone = value!;
                       },
+                      keyboardType: TextInputType.phone
                     ),
                     SizedBox(height: 12,),
                     Text(

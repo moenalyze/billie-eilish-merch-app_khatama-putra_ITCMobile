@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class MyTextFormField extends StatelessWidget {
   final String labelText;
   final String hintText;
+  final TextInputType keyboardType;
   final Function(String?) onSaved;
   const MyTextFormField({
     super.key,
     required this.labelText,
     required this.hintText,
+    required this.keyboardType,
     required this.onSaved
   });
 
@@ -46,6 +48,7 @@ class MyTextFormField extends StatelessWidget {
             }
             return null;
           },
+          keyboardType: keyboardType,
           onSaved: onSaved,
         ),
       ],
